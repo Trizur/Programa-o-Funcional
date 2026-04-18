@@ -1,0 +1,58 @@
+fnc1 x = if mod x 2 == 0 then "par" else "impar"
+fnc2 x = if x `mod` 2 == 0 then "par" else "impar"
+-- Função mod é predicado. como é função, coloca o nome e os argumentos.
+
+-- Infixo
+-- 5+2
+
+-- Prefixa
+-- a(+)5 2
+
+-- Versão infixa do mod
+-- 5`mod`2
+
+-- Operações de dois argumentos pode ser transformada na versão 
+-- Operações entre crases viram infixas
+
+-- Ex: Mesma função, porém indentando
+fnc3 x = if (x `mod` 2 == 0) then "par" else "impar"
+
+-- Ex: Deslocar linha, o que acontece
+fnc4 x =
+    if x `mod` 2 == 0
+    then "par"
+    else "impar"
+
+-- Ex:
+-- Teste: Espaço após a igualdede
+-- fnc'5 x =
+-- if mod x 2 -> ERRO
+-- Identação 0 enconta na margem esquerda
+-- Identação 1 encontra a um espaço da margem esquerda
+fnc5 x =
+    if mod x 2 == 0
+    then "par"
+    else "impar"
+
+-- Ex:
+fnc6 x =
+    if mod x 2 == 0
+    then "par"
+    else "impar"
+
+-- Ex:
+fnc7 x = if mod x 2 == 0
+then "par"
+else "impar"
+
+-- Ex: Função fatorial
+fat1 n = if n < 2 then 1 else n * fat1 (n - 1)
+
+fat 0 = 1
+fat n = n * fat (n - 1)
+
+-- A maior característica do haskell é uma linguagem preguiçosa
+-- O que é uma linguagem preguiçosa. Só faz quando é  estritamente necessário
+
+-- Ex: Potência
+pow x n = if n == 0 then 1 else x * pow x (n - 1)
